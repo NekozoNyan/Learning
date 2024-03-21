@@ -43,9 +43,9 @@ Node *getIntersection(Node *B, Node *C)
     while (B != NULL && C != NULL)
     {
         if (B->data > C->data)
-            B = B->next;
-        else if (C->data > B->data)
             C = C->next;
+        else if (C->data > B->data)
+            B = B->next;
         else
         {
             // create a newnode

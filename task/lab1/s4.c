@@ -35,7 +35,7 @@ Node *getMergedList(Node *a, Node *b)
 {
     Node *result = (Node *)malloc(sizeof(Node));
     result->next = NULL;
-    Node *current = result;
+    Node *current = NULL;
 
     a = a->next;
     b = b->next;
@@ -47,21 +47,21 @@ Node *getMergedList(Node *a, Node *b)
             // put b into tail
             Node *newnode = (Node *)malloc(sizeof(Node));
             newnode->data = b->data;
-            newnode->next = NULL;
+            newnode->next = current;
 
-            current->next = newnode;
+            result->next = newnode;
             current = newnode;
 
-            a = a->next;
+            b = b->next;
         }
         else if (a->data < b->data)
         {
             // put a into tail
             Node *newnode = (Node *)malloc(sizeof(Node));
             newnode->data = a->data;
-            newnode->next = NULL;
+            newnode->next = current;
 
-            current->next = newnode;
+            result->next = newnode;
             current = newnode;
 
             a = a->next;
@@ -72,9 +72,9 @@ Node *getMergedList(Node *a, Node *b)
             {
                 Node *newnode = (Node *)malloc(sizeof(Node));
                 newnode->data = a->data;
-                newnode->next = NULL;
+                newnode->next = current;
 
-                current->next = newnode;
+                result->next = newnode;
                 current = newnode;
             }
             a = a->next;
@@ -87,9 +87,9 @@ Node *getMergedList(Node *a, Node *b)
     {
         Node *newnode = (Node *)malloc(sizeof(Node));
         newnode->data = a->data;
-        newnode->next = NULL;
+        newnode->next = current;
 
-        current->next = newnode;
+        result->next = newnode;
         current = newnode;
 
         a = a->next;
@@ -99,9 +99,9 @@ Node *getMergedList(Node *a, Node *b)
     {
         Node *newnode = (Node *)malloc(sizeof(Node));
         newnode->data = b->data;
-        newnode->next = NULL;
+        newnode->next = current;
 
-        current->next = newnode;
+        result->next = newnode;
         current = newnode;
 
         b = b->next;
