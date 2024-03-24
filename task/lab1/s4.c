@@ -35,7 +35,7 @@ Node *getMergedList(Node *a, Node *b)
 {
     Node *result = (Node *)malloc(sizeof(Node));
     result->next = NULL;
-    Node *current = NULL;
+    Node *current = result;
 
     a = a->next;
     b = b->next;
@@ -47,9 +47,9 @@ Node *getMergedList(Node *a, Node *b)
             // put b into tail
             Node *newnode = (Node *)malloc(sizeof(Node));
             newnode->data = b->data;
-            newnode->next = current;
+            newnode->next = NULL;
 
-            result->next = newnode;
+            current->next = newnode;
             current = newnode;
 
             b = b->next;
@@ -59,9 +59,9 @@ Node *getMergedList(Node *a, Node *b)
             // put a into tail
             Node *newnode = (Node *)malloc(sizeof(Node));
             newnode->data = a->data;
-            newnode->next = current;
+            newnode->next = NULL;
 
-            result->next = newnode;
+            current->next = newnode;
             current = newnode;
 
             a = a->next;
@@ -72,9 +72,9 @@ Node *getMergedList(Node *a, Node *b)
             {
                 Node *newnode = (Node *)malloc(sizeof(Node));
                 newnode->data = a->data;
-                newnode->next = current;
+                newnode->next = NULL;
 
-                result->next = newnode;
+                current->next = newnode;
                 current = newnode;
             }
             a = a->next;
@@ -87,9 +87,9 @@ Node *getMergedList(Node *a, Node *b)
     {
         Node *newnode = (Node *)malloc(sizeof(Node));
         newnode->data = a->data;
-        newnode->next = current;
+        newnode->next = NULL;
 
-        result->next = newnode;
+        current->next = newnode;
         current = newnode;
 
         a = a->next;
@@ -99,9 +99,9 @@ Node *getMergedList(Node *a, Node *b)
     {
         Node *newnode = (Node *)malloc(sizeof(Node));
         newnode->data = b->data;
-        newnode->next = current;
+        newnode->next = NULL;
 
-        result->next = newnode;
+        current->next = newnode;
         current = newnode;
 
         b = b->next;
@@ -116,18 +116,19 @@ void printList(Node *head)
     Node *current = head->next;
     while (current != NULL)
     {
-        printf("%d ", current->data);
+        printf("%d\n", current->data);
         current = current->next;    
     }
-    printf("\n");
+    // printf("\n");
 }
 
 int main()
 {
     Node *a, *b, *mergedList;
     int m, n;
-    scanf("%d %d", &m, &n);
+    scanf("%d", &m);
     a = createList(m);
+    scanf("%d", &n);
     b = createList(n);
 
     mergedList = getMergedList(a, b);
