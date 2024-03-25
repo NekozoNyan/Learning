@@ -35,8 +35,8 @@ Node *initList(Node *head)
     head->pre = NULL;
     head->next = NULL;
 
-    // 初始化500长度，确保精度要求
-    for (int i = 0; i < 500; i++)
+    // 初始化700长度，确保500位精度要求
+    for (int i = 0; i < 700; i++)
     {
         insertList(head, 0);
     }
