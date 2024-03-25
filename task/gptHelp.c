@@ -65,9 +65,11 @@ int main()
         insert(num, 0);
         insert(sum, 0);
     }
+
     // p1,p2为指向两个链表的指针
     pnode p1 = num->next;
     pnode p2 = sum->next;
+    
     // 使两个链表除头节点外第一个节点的数据为2，计算直接从R2开始计算，简化了计算
     p1->date = 2;
     p2->date = 2;
@@ -82,6 +84,7 @@ int main()
         p2 = p2->next;
     }
     pnode sumtail = p2;
+
     // 开始运算；
     int temp = 0; // 计算过程中产生的临时数据
     int ret = 0;  // 计算过程中产生的借位or进位

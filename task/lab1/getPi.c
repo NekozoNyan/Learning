@@ -17,6 +17,16 @@ Node *initList(Node *head)
     }
     head->pre = NULL;
     head->next = NULL;
+
+    for(int i = 0; i < 500; i++)
+    {
+        insertList(head, 0);
+    }
+}
+
+// 计算Pi值并返回
+double getPi(){
+    
 }
 
 // 尾插法
@@ -40,6 +50,8 @@ void insertList(Node *L, int e)
         L->pre = current;
     }
 }
+
+
 
 // 输出链表
 void printList(Node *L, int n)
