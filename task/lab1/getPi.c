@@ -35,24 +35,12 @@ Node *initList(Node *head)
     head->pre = NULL;
     head->next = NULL;
 
-<<<<<<< HEAD
-    for(int i = 0; i < 500; i++)
-    {
-        insertList(head, 0);
-    }
-}
-
-// 计算Pi值并返回
-double getPi(){
-    
-=======
     // 初始化700长度，确保500位精度要求
     for (int i = 0; i < 700; i++)
     {
         insertList(head, 0);
     }
     return head;
->>>>>>> 7d6aeb79e98e11220cdf20f1147d0a1b4f83eaa0
 }
 
 // 尾插法
@@ -76,9 +64,6 @@ void insertList(Node *L, int e)
     }
 }
 
-<<<<<<< HEAD
-
-=======
 // 反三角函数幂级展开求Pi
 void getPi(Node *num, Node *sum, int n)
 {
@@ -144,7 +129,6 @@ void getPi(Node *num, Node *sum, int n)
     }
     printList(sum, n);
 }
->>>>>>> 7d6aeb79e98e11220cdf20f1147d0a1b4f83eaa0
 
 // 输出链表
 void printList(Node *L, int n)
