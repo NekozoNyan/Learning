@@ -13,7 +13,7 @@ typedef struct
     int stacksize;
 } SqStack, *stack;
 
-bool initStack(SqStack *s)
+bool initStack(stack s)
 {
     s->top = -1;
     s->data = (char *)malloc(Maxsize * sizeof(char));
